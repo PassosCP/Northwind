@@ -37,6 +37,11 @@ models:
         node_color: "#cd7f32"  # Cor bronze para a camada raw
     staging:
       materialized: view
+    intermediate:
+      materialized: view
+    marts:
+      +schema: "gold"  # Define o schema "gold" para as tabelas marts
+      materialized: table
       +docs:
         node_color: "#c0c0c0"  # Cor prata para a camada staging
     reports:
